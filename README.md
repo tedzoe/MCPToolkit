@@ -15,11 +15,14 @@ Includes 12 server integrations, a topic-based menu, MCP Inspector smoke tests, 
 
 ## First success: no API keys
 
-1. Use this repository's **Code → HTTPS** button to copy its clone command and run it, or download and extract the ZIP. Then open a terminal in the project directory:
+1. Clone the repository into a folder named `mcp-toolkit`:
 
    ```bash
+   git clone https://github.com/tedzoe/MCPToolkit.git mcp-toolkit
    cd mcp-toolkit
    ```
+
+   Alternatively, use **Code → Download ZIP**, extract it, and open a terminal in the extracted project directory.
 
 2. Check dependencies and run a real Fetch call:
 
