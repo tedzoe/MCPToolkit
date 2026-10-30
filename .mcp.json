@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "mcp-server-fetch==2026.8.18"
+      ],
+      "env": {}
+    }
+  }
+}

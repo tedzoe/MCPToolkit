@@ -1,0 +1,16 @@
+# One topic per line. "# staged: <server>" = pre-verified server exists; "# unstaged" = must find one live.
+Generative AI model adoption and open-weight model momentum   # staged: huggingface
+Open-source AI developer ecosystem                             # staged: github (needs PAT) / huggingface
+AI semiconductors: vendor financial health                     # staged: sec-edgar
+Hyperscaler capex and cloud vendor financials                  # staged: sec-edgar
+Agentic AI research trends                                     # staged: arxiv
+Quantum computing research landscape                           # staged: arxiv
+Enterprise software vulnerability exposure                     # staged: nvd
+Enterprise AI startup funding news                             # staged: exa
+AI chip patent landscape                                       # staged: exa
+Cloud pricing changes across AWS, Azure and GCP                # unstaged
+Tech job postings and AI hiring demand                         # unstaged
+Mobile app store rankings for AI assistants                    # unstaged
+Open-source package downloads (npm and PyPI)                   # unstaged
+Semiconductor supply chain and fab capacity                    # unstaged
+Data center power availability and energy deals                # unstaged

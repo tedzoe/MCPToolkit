@@ -1,0 +1,114 @@
+{
+  "_README": "Backup if Claude Code fails. Copy the servers you need into ~/Library/Application Support/Claude/claude_desktop_config.json, replace every <...> placeholder with the real value from .env (Desktop does NOT expand ${VAR}), then fully quit and reopen Claude Desktop. Remote servers go through the mcp-remote@0.14.3 stdio bridge. Keep only fetch plus the ONE server you are demoing. Required tier: fetch, huggingface, sec-edgar, arxiv, exa, nvd, github; the rest are optional (see RUNBOOK.md).",
+  "mcpServers": {
+    "fetch": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-fetch==2026.8.18"
+      ]
+    },
+    "sec-edgar": {
+      "command": "uvx",
+      "args": [
+        "sec-edgar-mcp==1.1.0"
+      ],
+      "env": {
+        "SEC_EDGAR_USER_AGENT": "<Your Name you@your-domain.example>"
+      }
+    },
+    "arxiv": {
+      "command": "uvx",
+      "args": [
+        "arxiv-mcp-server==0.7.2",
+        "--storage-path",
+        "<REPO_PATH>/.cache/arxiv"
+      ]
+    },
+    "semantic-scholar": {
+      "command": "uvx",
+      "args": [
+        "s2-mcp-server==1.7.4"
+      ],
+      "env": {
+        "SEMANTIC_SCHOLAR_API_KEY": "<optional key>"
+      }
+    },
+    "patents-google": {
+      "command": "uvx",
+      "args": [
+        "deeparchi-patent-mcp==1.9.2"
+      ]
+    },
+    "nvd": {
+      "command": "<REPO_PATH>/servers/nvd/run.sh",
+      "env": {
+        "NVD_API_KEY": "<optional key>"
+      }
+    },
+    "brave": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@brave/brave-search-mcp-server@2.1.4"
+      ],
+      "env": {
+        "BRAVE_API_KEY": "<BRAVE_API_KEY>"
+      }
+    },
+    "huggingface": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@0.14.3",
+        "https://huggingface.co/mcp",
+        "--header",
+        "Authorization:Bearer ${HF_TOKEN}"
+      ],
+      "env": {
+        "HF_TOKEN": "<HF_TOKEN>"
+      }
+    },
+    "exa": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@0.14.3",
+        "https://mcp.exa.ai/mcp",
+        "--header",
+        "x-api-key:${EXA_API_KEY}"
+      ],
+      "env": {
+        "EXA_API_KEY": "<EXA_API_KEY>"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@0.14.3",
+        "https://api.githubcopilot.com/mcp/readonly",
+        "--header",
+        "Authorization:Bearer ${GITHUB_PAT}"
+      ],
+      "env": {
+        "GITHUB_PAT": "<GITHUB_PAT>"
+      }
+    },
+    "alphavantage": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@0.14.3",
+        "https://mcp.alphavantage.co/mcp?apikey=<ALPHAVANTAGE_API_KEY>"
+      ]
+    },
+    "tavily": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@0.14.3",
+        "https://mcp.tavily.com/mcp/?tavilyApiKey=<TAVILY_API_KEY>"
+      ]
+    }
+  }
+}
